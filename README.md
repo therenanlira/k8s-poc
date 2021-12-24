@@ -1,8 +1,8 @@
 # k8s-poc
 
-OK deployar o prometheus
+- OK deployar o prometheus
 
-configurar o prometheus
-deployar o grafana
-expor o grafana com ingress-nginx
-mudar o runtime para containerd
+- Configurar o prometheus
+- Deployar o grafana
+- Expor o grafana com ingress-nginx
+- Mudar o runtime para containerd
