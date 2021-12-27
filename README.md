@@ -1,8 +1,9 @@
 # k8s-poc
 
-- OK deployar o prometheus
+- OK: Deployar o prometheus
+- OK: Deployar o grafana
 
-- Configurar o prometheus
-- Deployar o grafana
-- Expor o grafana com ingress-nginx
+- Prometheus: Corrigir coleta de metricas do kube-state-metrics e kubernetes-pods
+- Expor o Prometheus com ingress-nginx
+- Expor o Grafana com ingress-nginx
 - Mudar o runtime para containerd
