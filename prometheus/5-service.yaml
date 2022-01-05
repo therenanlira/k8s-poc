@@ -3,14 +3,17 @@ kind: Service
 metadata:
   name: prometheus-service
   namespace: monitoring
+  labels:
+    app: prometheus
   annotations:
       prometheus.io/scrape: 'true'
       prometheus.io/port:   '9090'
 spec:
-  selector: 
-    app: prometheus-server
   type: ClusterIP  
+  selector: 
+    app: prometheus
   ports:
     - port: 8000
       targetPort: 9090 
-      nodePort: 30000
+      protocol: TCP
+      name: http
