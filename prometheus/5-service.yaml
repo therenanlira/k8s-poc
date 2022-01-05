@@ -14,5 +14,3 @@ spec:
     - port: 8000
       targetPort: 9090 
       nodePort: 30000
-  # externalIPs:
-  #   - "45.62.251.177"
