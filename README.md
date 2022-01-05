@@ -14,7 +14,15 @@ Tasks:
 - OK: Expor o Prometheus com ingress-nginx
 - OK: Expor o Grafana com ingress-nginx
 
+
 - Ativar HTTPS para o Prometheus e Grafana
 - Alterar de subdominio (k8s-poc-prometheus.devopscheats.com) para URI (k8s-poc.devopscheats.com/prometheus)
 
-- Mudar o runtime para containerd
+
+- Configurar Alertmanager
+- Configurar Grafana
+- Configurar Node Exporter
+https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
+
+
+- Alterar o runtime para containerd
