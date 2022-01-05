@@ -8,7 +8,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
-  host: k8s-poc.devopscheats.com
+  host: k8s-poc-prometheus.devopscheats.com
   # tls:
   #   secret: prometheus-secret
   upstreams:
