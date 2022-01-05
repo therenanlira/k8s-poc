@@ -30,7 +30,3 @@ spec:
   - path: /
     action:
       pass: prometheus
-      # return:
-      #   code: 200
-      #   type: text/plain
-      #   body: "Hello World\n"
