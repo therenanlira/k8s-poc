@@ -1,6 +1,15 @@
 # k8s-poc
 
 ## v2
+* Abortados o uso de arquivos Helm para subir os pods. Utilizado YAML.
+* Provisionadas as apps:
+1) Nginx Ingress
+2) Prometheus (em deployment)
+3) Grafana
+
+* Pendente expor os serviços para a web (ingress ou virtual-server)
+
+---
 
 - Alterar de subdominio (k8s-poc-prometheus.devopscheats.com) para URI (k8s-poc.devopscheats.com/prometheus)
 
@@ -16,7 +25,8 @@
 - Alterar o runtime para containerd
 
 ## v1
-Nginx Ingress - tentativas de expor os serviços:
+* Foram usados arquivos yaml dos repositórios oficiais
+* Nginx Ingress - tentativas de expor os serviços:
 1) Foi possível configurar tanto VirtualServer quanto Ingress, porém os annotations não funcionam.
 
 ### Tasks v1 - DONE
