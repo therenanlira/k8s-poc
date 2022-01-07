@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: prometheus
+  name: monitoring
   labels:
     app.kubernetes.io/name: monitoring
     app.kubernetes.io/instance: monitoring
