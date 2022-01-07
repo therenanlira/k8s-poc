@@ -13,9 +13,11 @@ Tasks:
 - OK: Prometheus: Corrigir coleta de metricas do kube-state-metrics e kubernetes-pods
 - OK: Expor o Prometheus com ingress-nginx
 - OK: Expor o Grafana com ingress-nginx
+- OK: Configurar o Grafana com SSL
 
+- Ativar HTTPS para o Grafana
+- Configurar OAuth - https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/
 
-- Ativar HTTPS para o Prometheus e Grafana
 - Alterar de subdominio (k8s-poc-prometheus.devopscheats.com) para URI (k8s-poc.devopscheats.com/prometheus)
 
 

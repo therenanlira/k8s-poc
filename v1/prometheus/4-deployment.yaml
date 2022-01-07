@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: prometheus
   namespace: monitoring
-  # labels:
-  #   app: prometheus
 spec:
   replicas: 1
   selector:
