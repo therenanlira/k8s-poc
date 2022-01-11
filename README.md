@@ -12,6 +12,7 @@
 1) Grafana: devopscheats.com
 2) Prometheus: www.devopscheats.com
 - Configurar redirect HTTPS para o Grafana
+- Prometheus-ingress: Habilitar a autenticação básica
 
 ---
 
@@ -26,7 +27,6 @@
 2) prometheus-ingress: Configurar rewrite location / para /prometheus
 3) grafana-ingress: Configurar rewrite location / para /grafana
 
-- OK: prometheus-ingress: Habilitar a autenticação básica
 
 ### A fazer no AKS
 - Configurar OAuth
