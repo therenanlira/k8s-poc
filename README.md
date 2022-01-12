@@ -20,12 +20,13 @@
 
 - Configurar Alertmanager
 - Configurar Grafana
-- Configurar Node Exporter
 >     https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
 
 1) Alterar o runtime para containerd
-2) prometheus-ingress: Configurar rewrite location / para /prometheus
-3) grafana-ingress: Configurar rewrite location / para /grafana
+2) Configurar storage
+3) Configurar Backup 
+4) prometheus-ingress: Configurar rewrite location / para /prometheus
+5) grafana-ingress: Configurar rewrite location / para /grafana
 
 
 ### A fazer no AKS

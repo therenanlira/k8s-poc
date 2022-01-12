@@ -15,14 +15,9 @@ k patch svc ingress-nginx-controller -p '{"spec":{"externalIPs":["45.62.251.177"
       > 20 disk
 
       > k8s-worker-1
-      >  4 cpu
-      >  4 mem
-      > 25 disk
-
-      > k8s-worker-2
-      >  2 cpu
-      >  2 mem
-      > 25 disk
+      >  6 cpu
+      >  6 mem
+      > 50 disk
 
       > free (maybe vpn server or backup for k8s)
       >   1 cpu
@@ -31,16 +26,11 @@ k patch svc ingress-nginx-controller -p '{"spec":{"externalIPs":["45.62.251.177"
   
   > Cenário 2
       > k8s-master-1
-      >  1 cpu
-      >  1.5 mem
-      > 20 disk
+      >   8 cpu
+      >   8 mem
+      >  50 disk
 
-      > k8s-worker-1
-      >  4 cpu
-      >  4 mem
-      > 35 disk
-
-      > k8s-worker-2
-      >  4 cpu
-      >  4 mem
-      > 35 disk
+      > k8s-backup-1
+      >   1 cpu
+      > 1.5 mem
+      >  40 disk

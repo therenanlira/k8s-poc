@@ -10,20 +10,9 @@ metadata:
     nginx.ingress.kubernetes.io/auth-secret: prometheus-basic-auth
     nginx.ingress.kubernetes.io/auth-secret-type: auth-file
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
-    # nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
-  # - host: devopscheats.com
-  #   http:
-  #     paths:
-  #     - path: /
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: prometheus-service
-  #           port:
-  #             number: 8000
   - host: www.devopscheats.com
     http:
       paths:
@@ -36,6 +25,5 @@ spec:
               number: 8000
   tls:
     - hosts:
-      - devopscheats.com
-      # - www.devopscheats.com
+      - www.devopscheats.com
       secretName: devopscheats-secret
