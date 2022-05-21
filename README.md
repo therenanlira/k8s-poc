@@ -34,4 +34,3 @@ Em seguida aplique as configurações dos demais:
     kubectl apply -f 2-monitoring/1_prometheus
     kubectl apply -f 2-monitoring/2_grafana
     kubectl apply -f 2-monitoring/3_kube-state-metrics
-
