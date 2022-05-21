@@ -1,56 +1,37 @@
-# k8s-poc
+# K8S-PoC
 
-## v2
-### Feito
+## Single node
 
-- Abortados o uso de arquivos Helm para subir os pods. Utilizado YAML.
-- Provisionadas as apps:
-1) Nginx Ingress
-2) Prometheus
-3) Grafana
-- Serviços expostos para a web (kind: ingress)
-1) Grafana: devopscheats.com
-2) Prometheus: www.devopscheats.com
-- Configurar redirect HTTPS para o Grafana
-- Prometheus-ingress: Habilitar a autenticação básica
+Por se tratar de um ambiente de PoC, vamos considerar que esta configuração será aplicada em um ambiente de Kubernetes Single Node.
 
----
+Para evitar erro com *not tolerate taint*, execute o comando abaixo:
 
-### A fazer no cluster self hosted:
+    kubectl taint nodes --all node-role.kubernetes.io/control-plane- node-role.kubernetes.io/master-
 
-- Configurar Alertmanager
-- Configurar Grafana
->     https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
+OPCIONAL:
 
-1) Alterar o runtime para containerd
-2) Configurar storage
-3) Configurar Backup 
-4) prometheus-ingress: Configurar rewrite location / para /prometheus
-5) grafana-ingress: Configurar rewrite location / para /grafana
+Caso não tenha configurado um gerenciador de rede para o seu Kubernetes, você pode usar o Calico executando o comando abaixo:
+
+    kubectl apply -f calico.yaml
+
+Se for necessário fazer alguma alteração no pod CIDR, altere o range de IP na linha *4435*:
+
+	 - name: CALICO_IPV4POOL_CIDR
+       value: "10.142.0.0/24"
+
+Para mais informações sobre a configuração do Calico, veja [Easy steps to install Calico CNI on Kubernetes Cluster | GoLinuxCloud](https://www.golinuxcloud.com/calico-kubernetes/)
 
 
-### A fazer no AKS
-- Configurar OAuth
->     https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/
+### Ordem de configuração
 
----
+Primeiramente, aplique as configurações do diretório *0-namespaces-secrets*:
 
-## v1
-* Foram usados arquivos yaml dos repositórios oficiais
-* Nginx Ingress - tentativas de expor os serviços:
-1) Foi possível configurar tanto VirtualServer quanto Ingress, porém os annotations não funcionam.
+    kubectl apply -f 0-namespaces-secrets/
+ 
+Em seguida aplique as configurações dos demais:
 
-### Tasks v1 - DONE
+    kubectl apply -f 1-ingress-nginx
+    kubectl apply -f 2-monitoring/1_prometheus
+    kubectl apply -f 2-monitoring/2_grafana
+    kubectl apply -f 2-monitoring/3_kube-state-metrics
 
-Ao iniciar, execute:
-> k apply -f nginx-ingress/11-service.yaml
-
-Ao finalizar, execute:
-> k delete -f nginx-ingress/11-service.yaml
-
-- OK: Deployar o prometheus
-- OK: Deployar o grafana
-- OK: Prometheus: Corrigir coleta de metricas do kube-state-metrics e kubernetes-pods
-- OK: Expor o Prometheus com ingress-nginx
-- OK: Expor o Grafana com ingress-nginx
-- OK: Configurar o Grafana com SSL
