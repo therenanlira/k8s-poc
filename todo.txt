@@ -1,0 +1,5 @@
+Conseguir usar o kube-capacity:
+
+1 - Configurar o certificado do kubelet para ser assinado pelo CA do cluster
+2 - kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml (https://github.com/kubernetes-sigs/metrics-server)
+3 - Adicionar esse passo no README.md
