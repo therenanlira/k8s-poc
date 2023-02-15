@@ -1,16 +1,20 @@
-# k8s-PoC
+# Kubernetes-POC
 
 ## Single node
 
 Caso o seu ambiente PoC tenha apenas um Node, execute o comando abaixo para evitar o erro com *not tolerate taint*:
 
-````kubectl taint nodes --all node-role.kubernetes.io/control-plane- node-role.kubernetes.io/master-````
+  ```bash
+  kubectl taint nodes --all node-role.kubernetes.io/control-plane- node-role.kubernetes.io/master-
+  ```
 
-## OPCIONAL:
+## Opcional:
 
 Caso não tenha configurado um gerenciador de rede para o seu Kubernetes, você pode usar o Calico, que está neste repositório, executando o comando abaixo:
 
-````kubectl apply -f calico.yaml````
+  ```bash
+  kubectl apply -f calico.yaml
+  ```
 
 Se for necessário fazer alguma alteração no pod CIDR, altere o range de IP na linha *4435*:
 
@@ -24,15 +28,18 @@ Para mais informações sobre a configuração do Calico, veja [Easy steps to in
 
 Primeiramente, aplique as configurações do diretório *0-namespaces-secrets*:
 
-````kubectl apply -f namespaces-secrets/````
+  ```bash
+  kubectl apply -f namespaces-secrets/
+  ```
  
 Em seguida aplique as configurações dos demais:
 
-````kubectl apply -f namespaces/````    
-````kubectl apply -f ingress-nginx/````    
-````kubectl apply -f prometheus/````    
-````kubectl apply -f grafana/````    
-````kubectl apply -f kube-state-metrics/````    
-
+  ```bash
+  kubectl apply -f namespaces/
+  kubectl apply -f ingress-nginx/
+  kubectl apply -f prometheus/
+  kubectl apply -f grafana/
+  kubectl apply -f kube-state-metrics/
+  ```
 
 > *OBS:* Ainda é necessário configurar o TLS nos ingress.
